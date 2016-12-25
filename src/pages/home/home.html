@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      Dashboard
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="logOut()">
+        <ion-icon name="log-out"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+ <h2>Welcome !</h2>
+ <ion-buttons>
+ Click here to feed in your information.
+      <button (click)="goToProfile()">
+        <ion-icon name="person"></ion-icon>
+        </button>
+    </ion-buttons>
+    <br><br>
+    <h3>News Feed:</h3>
+    <br>
+    <h3>Seed Bank Info:</h3>
+</ion-content>
