@@ -11,15 +11,32 @@
   </ion-navbar>
 </ion-header>
 <ion-content padding>
- <h2>Welcome !</h2>
- <ion-buttons>
- Click here to feed in your information.
-      <button (click)="goToProfile()">
-        <ion-icon name="person"></ion-icon>
-        </button>
-    </ion-buttons>
-    <br><br>
-    <h3>News Feed:</h3>
-    <br>
-    <h3>Seed Bank Info:</h3>
+ <h2>QUIZ</h2>
+  <form [formGroup]="Form" (ngSubmit)="submit();">
+ <ion-list>
+<ion-item *ngFor="let book of books ; let i =index">
+{{book.question}}<span *ngIf="show_ans">
+    Your Answer is {{Result}}
+    </span>
+<br><br>
+<label *ngFor="let g of books[i].option" class="checkbox">
+
+        <input type="checkbox" data-md-icheck formControlName="options" (change)="ForCheckboxChange(g, $event)">
+        {{g.subOption}}<br>
+     </label>
+     <div *ngIf="show_ans">
+  <b>Correct answer:</b>
+    <div *ngFor="let t of books[i].option">
+    <span *ngIf="t.answer">
+      {{t.subOption}}
+    </span>
+    </div>
+    </div>
+</ion-item>
+ </ion-list>
+ <button type="submit" ion-button>Submit</button>
+ <button type="reset"  ion-button color="danger" (click)="reset()">Retake Test</button>
+<br>
+<h4 *ngIf="show_ans"><b>SCORE:{{ScoreValue}}</b></h4>
+</form>
 </ion-content>

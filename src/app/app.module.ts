@@ -8,6 +8,7 @@ import {ProfileData} from '../providers/profile-data';
 import { RegisterPage } from '../pages/register/register';
 import { ResetPasswordPage } from '../pages/reset-password-page/reset-password-page';
 import { ProfilePage } from '../pages/profile-page/profile-page';
+import {Data} from '../providers/data';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,6 @@ import { ProfilePage } from '../pages/profile-page/profile-page';
     ResetPasswordPage,
      ProfilePage
   ],
-  providers: [AuthService,ProfileData]
+  providers: [AuthService,ProfileData,Data]
 })
 export class AppModule {}

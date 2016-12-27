@@ -3,6 +3,8 @@ import { Platform } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
 
 import { LoginPage } from '../pages/login/login';
+import { HomePage } from '../pages/home/home';
+
 import { ProfilePage } from '../pages/profile-page/profile-page';
 
 import firebase from 'firebase';
@@ -11,7 +13,7 @@ import firebase from 'firebase';
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage :any = LoginPage;
+  rootPage :any = HomePage;
 firebase: any;
 
   constructor(platform: Platform) {
